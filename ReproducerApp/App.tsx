@@ -58,6 +58,19 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
+  React.useEffect(()=>{
+    const testObject = {
+      a:'foo',
+      b:1,
+      c:'bar'
+    };
+
+    //try to copy the content of the object from chrome debugger console (right click-> copy object)
+    console.log('Object log: ', testObject);
+    console.log('Object log strigified: ', JSON.stringify(testObject));
+
+  }, [])
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
